@@ -8,13 +8,16 @@ The Little ASP.NET Core Book is structured as a tutorial. You'll build a to-do a
 * What dependency injection is and why it's useful
 * How to read and write data to a database
 * How to add log-in, registration, and security
-* How to deploy the app to the web
+* How to deploy the application to the web
 
 Don't worry, you don't need to know anything about ASP.NET Core (or any of the above) to get started.
 
 ## Before you begin
 
-The code for the finished version of the application you'll build is available on GitHub (https://www.github.com/nbarbettini/little-aspnetcore-todo). Feel free to download it if you want to compare as you write your own code.
+The code for the finished version of the application you'll build is available on GitHub:
+https://www.github.com/nbarbettini/little-aspnetcore-todo
+
+Feel free to download it if you want to compare as you write your own code.
 
 The book itself is updated frequently with bug fixes and new content. If you're reading a PDF, e-book, or print version, check the official website ([littleasp.net/book](http://www.littleasp.net/book)) to see if there's an updated version available. The very last page of the book contains version information and a changelog.
 
@@ -53,7 +56,7 @@ There are a lot of great web frameworks to choose from already: Node/Express, Sp
 * **Security.** The team at Microsoft takes security seriously, and ASP.NET Core is built to be secure from the ground up. It handles things like sanitizing input data and preventing cross-site request forgery (XSRF) automatically, so you don't have to. You also get the benefit of static typing with the .NET compiler, which is like having a very paranoid linter turned on at all times. This makes it harder to do something you didn't intend with a variable or chunk of data.
 
 ## .NET Core and .NET Standard
-Throughout this book, you'll be learning about ASP.NET Core (the web framework). I'll occasionally mention the .NET runtime (the supporting library that runs .NET code).
+Throughout this book, you'll be learning about ASP.NET Core (the web framework). I'll occasionally mention the .NET runtime, the supporting library that runs .NET code. (If this already sounds like Greek to you, just skip to the next chapter!)
 
 You may also hear about .NET Core and .NET Standard. The naming gets confusing, so here's a simple explanation:
 

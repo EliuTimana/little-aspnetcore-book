@@ -4,7 +4,7 @@ Search for "download .net core" and follow the instructions on Microsoft's downl
 ```
 dotnet --version
 
-2.0.0
+2.1.104
 ```
 
 You can get more information about your platform with the `--info` flag:
@@ -12,15 +12,15 @@ You can get more information about your platform with the `--info` flag:
 ```
 dotnet --info
 
-.NET Command Line Tools (2.0.0)
+.NET Command Line Tools (2.1.104)
 
 Product Information:
- Version:            2.0.0
- Commit SHA-1 hash:  cdcd1928c9
+ Version:            2.1.104
+ Commit SHA-1 hash:  48ec687460
 
 Runtime Environment:
  OS Name:     Mac OS X
- OS Version:  10.12
+ OS Version:  10.13
 
 (more details...)
 ```

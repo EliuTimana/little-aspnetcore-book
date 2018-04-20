@@ -1,6 +1,6 @@
 # Introducción
 
-Gracias por elegir El pequeño libro sobre ASP.NET Core! He escrito este corto libro con la intención de ayudar tanto programadores como a toda la gente interesada en aprender acerca de ASP.NET Core 2.0, un nuevo framework para construir aplicaciones webs y APIs.
+Gracias por elegir El pequeño libro sobre ASP.NET Core! He escrito este pequeño libro con la intención de ayudar tanto programadores como a toda la gente interesada en aprender acerca de ASP.NET Core 2.0, un nuevo framework para construir aplicaciones webs y APIs.
 
 El pequeño libro sobre ASP.NET Core Book esta estructurado como un tutorial. Con él serás capaz de construir una aplicación To-Do de inicio a fin mientras aprendes:
 

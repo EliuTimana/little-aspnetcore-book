@@ -13,15 +13,19 @@ El pequeño libro sobre ASP.NET Core Book esta estructurado como un tutorial. Co
 
 No te preocupes, no necesitas tener conocimientos previos acerca de ASP.NET Core \(o acerca de ninguno de los puntos anteriores\) para comenzar con este libro.
 
-## Before you begin
+## Antes de comenzar
 
-The code for the finished version of the application you'll build is available on GitHub \([https://www.github.com/nbarbettini/little-aspnetcore-todo](https://www.github.com/nbarbettini/little-aspnetcore-todo)\). Feel free to download it if you want to compare as you write your own code.
+El resultado final de la aplicación esta disponible en GitHub \([https://www.github.com/nbarbettini/little-aspnetcore-todo](https://www.github.com/nbarbettini/little-aspnetcore-todo)\). Siéntete libre para descargarlo si tienes dudas o necesitas comparar tu propio código.
 
-The book itself is updated frequently with bug fixes and new content. If you're reading a PDF, e-book, or print version, check the official website \([littleasp.net/book](http://www.littleasp.net/book)\) to see if there's an updated version available. The very last page of the book contains version information and a changelog.
+El libro esta inmerso en una continua actualización con correcciones de errores y nuevo contenido. Si estas leyendo la versión en PDF, eBook, o en papel, visita la pagina oficial \([littleasp.net/book](http://www.littleasp.net/book)\) y comprueba si exista una versión mas actual disponible. En la ultima pagina del libro se encuentra una lista detallada con las versiones y el log de cambios.
 
-### Reading in your own language
+### Lectura en otros idiomas
 
-Thanks to some fantastic multilingual folks, the Little ASP.NET Core Book has been translated into other languages:
+Gracias al gran trabajo de algunos compañeros fantásticos , el pequeño libro ASP.NET Core Book ha sido traducido a otros idiomas:
+
+* [**ASP.NET Core El Kitabı**](https://sahinyanlik.gitbooks.io/kisa-asp-net-core-kitabi/) \(Turkish\)
+* [**简明 ASP.NET Core 手册**](https://windsting.github.io/little-aspnetcore-book/book/) \(Chinese\)
+* [**The Little ASP .Net Core Book**](https://nbarbettini.gitbooks.io/little-asp-net-core-book)** **\(English\)
 
 ## Who this book is for
 

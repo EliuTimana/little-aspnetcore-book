@@ -49,21 +49,21 @@ En la actualidad existen una gran variedad the frameworks web entre los que eleg
 
 * **Velocidad.** ASP.NET Core es realmente rápido. Dado que .NET code es compilado, su ejecución es much mas rapida respecto a otros lenguajes interpretados como es el caso de JavaScript o Ruby. ASP.NET Core ademas esta optimizado para el uso de ejecución multi-hilo y tareas asíncronas. Se puede apreciar una en velocidad de ejecución de unas 5-10 de veces mayor a la velocidad de código escrito en Node.js.
 * **Ecosistema.** ASP.NET Core puede resultar novedoso, pero en realidad la tecnología .NET lleva mucho tiempo en uso. Existen miles de paquetes disponibles en NuGet \(el administrador de paquetes para  .NET; es el equivalente de npm, Ruby gems, o Maven\). Existen actualmente paquetes prácticamente para todo lo que necesites, desde deserialización JSON, conectores para bases de datos, generación de PDFs y prácticamente cualquier cosa que se te pueda ocurrir.
-* **Seguridad.** El equipo de Microsoft se ha tomado la seguridad de este framework muy en serio, y por ellos ASP.NET Core ha sido creado para ser seguro desde sus cimientos. Él se encarga por defecto de manejar cosas como validar la entrada de datos y prevenir posibles ataques XSRF \(Cross-site Request Forgery\), así no tienes que preocuparte de hacerlo tu. Ademas tiene el beneficio de ser un lenguaje con tipado estático gracias al compilador de .NET, lo que nos aporta tener un comprobador de código cubriéndonos las espaldas de forma continua. De esta forma es realmente complicado hacer algo que no tenias intención de hacer con alguna variedad a fragmento de código.
+* **Seguridad.** El equipo de Microsoft se ha tomado la seguridad de este framework muy en serio, y por ellos ASP.NET Core ha sido creado para ser seguro desde sus cimientos. Él se encarga por defecto de manejar cosas como validar la entrada de datos y prevenir posibles ataques XSRF \(Cross-site Request Forgery\), así no tienes que preocuparte de hacerlo tu. Ademas tiene el beneficio de ser un lenguaje con tipado estático gracias al compilador de .NET, lo que nos aporta tener un comprobador de código cubriéndonos las espaldas de forma continua. De esta forma es realmente complicado hacer algo que no tenias intención de hacer con alguna variedad ó fragmento de código.
 
-## .NET Core and .NET Standard
+## .NET Core VS .NET Standard
 
-Throughout this book, you'll be learning about ASP.NET Core \(the web framework\). I'll occasionally mention the .NET runtime \(the supporting library that runs .NET code\).
+A lo largo de este libro, aprenderas nuevos conceptos acerca de ASP.NET Core \(el framework web\). En determinadas ocasiones hare mención a .NET \(la librería encargada de la ejecución del código .NET\).
 
-You may also hear about .NET Core and .NET Standard. The naming gets confusing, so here's a simple explanation:
+Puede que incluso ya hayas oido hablar de .NET Core y .NET Standard. Los nombres no ayudan y pueden llevar a confusión, así que intentare realizar una pequeña explicación:
 
-**.NET Standard** is a platform-agnostic interface that defines what features and APIs are available in .NET. .NET Standard doesn't represent any actual code or functionality, just the API definition. There are different "versions" or levels of .NET Standard that reflect how many APIs are available \(or how wide the API surface area is\). For example, .NET Standard 2.0 has more APIs available than .NET Standard 1.5, which has more APIs than .NET Standard 1.0.
+**.NET Standard** es una interfaz independiente de la plataforma que define que características y APIs están disponibles en .NET., .NET Standard por si mismo no representa ningún fragmento de código o funcionalidad, simplemente es una definición de la API disponible. Existen diferentes "versiones" o niveles dentro de .NET Standard que reflejan el numero de APIs disponibles \(o como de extensa es la API disponible\). Por ejemplo, .NET Standard 2.0 tiene una API mayor que .NET Standard 1.5, quien a su vez tiene mas APIs que .NET Standard 1.0.
 
-**.NET Core** is the .NET runtime that can be installed on Windows, Mac, or Linux. It implements the APIs defined in the .NET Standard interface with the appropriate platform-specific code on each operating system. This is what you'll install on your own machine to build and run ASP.NET Core applications.
+**.NET Core** es el código que ejecuta .NET que puede ser instalado en Windows, Mac, o Linux. Este implementa las APIs definidas en la interface standard de .NET con el código necesario para cada plataforma en cada sistema operativo. Esto es lo que instalaras en tu maquina para poder crear y ejecutar aplicaciones ASP.NET Core.
 
-And just for good measure, **.NET Framework** is a different implementation of .NET Standard that is Windows-only. This was the only .NET runtime until .NET Core came along and opened .NET up to Mac and Linux. ASP.NET Core can also run on Windows-only .NET Framework, but I won't touch on this too much.
+Para terminar con un breve resumen, **.NET Framework** es una diferente implementación de .NET Standard que solo esta disponible para Windows. Esta era la única forma de ejecutar .NET hasta la publicación de .NET Core y la apertura del código .NET para Mac y Linux. ASP.NET Core puede correr solo en .NET Framework Windows, pero no hablaremos mucho acerca de ello en este libro.
 
-If you're confused by all this naming, no worries! We'll get to some real code in a bit.
+Si tienes alguna duda acerca de todas estas denominaciones, no te preocupes en seguida comenzaros con código real!
 
 ## A note to ASP.NET 4 developers
 

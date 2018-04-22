@@ -1,4 +1,4 @@
-# Introducción
+# Introduction
 
 Gracias por elegir El pequeño libro sobre ASP.NET Core! He escrito este pequeño libro con la intención de ayudar tanto programadores como a toda la gente interesada en aprender acerca de ASP.NET Core 2.0, un nuevo framework para construir aplicaciones webs y APIs.
 
@@ -15,7 +15,11 @@ No te preocupes, no necesitas tener conocimientos previos acerca de ASP.NET Core
 
 ## Antes de comenzar
 
-El resultado final de la aplicación esta disponible en GitHub \([https://www.github.com/nbarbettini/little-aspnetcore-todo](https://www.github.com/nbarbettini/little-aspnetcore-todo)\). Siéntete libre para descargarlo si tienes dudas o necesitas comparar tu propio código.
+El resultado final de la aplicación esta disponible en GitHub:
+
+[https://www.github.com/nbarbettini/little-aspnetcore-todo](https://www.github.com/nbarbettini/little-aspnetcore-todo)
+
+Siéntete libre para descargarlo si tienes dudas o necesitas comparar tu propio código.
 
 El libro esta inmerso en una continua actualización con correcciones de errores y nuevo contenido. Si estas leyendo la versión en PDF, eBook, o en papel, visita la pagina oficial \([littleasp.net/book](http://www.littleasp.net/book)\) y comprueba si exista una versión mas actual disponible. En la ultima pagina del libro se encuentra una lista detallada con las versiones y el log de cambios.
 

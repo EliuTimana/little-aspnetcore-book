@@ -43,13 +43,13 @@ ASP.NET Core es un framework web creado por Microsoft para la construcción de a
 
 ASP.NET Core corre encima del tiempo de ejecución de Microsoft's .NET, similar al funcionamiento de la maquina virtual Java \(JVM\) ó el interprete de Ruby. Por tanto puedes desarrollar tu aplicaciones ASP.NET Core en una gran variedad de lenguajes como C\#, Visual Basic ó F\#. C\# es la opción mas utilizada, y por tanto sera la que usaremos en este libro. Puedes construir y ejecutar tus aplicaciones ASP.NET Core tanto en maquinas Windows, como Mac y Linux.
 
-## Why do we need another web framework?
+## Por que es necesario otro framework web más?
 
-There are a lot of great web frameworks to choose from already: Node/Express, Spring, Ruby on Rails, Django, Laravel, and many more. What advantages does ASP.NET Core have?
+En la actualidad existen una gran variedad the frameworks web entre los que elegir: Node/Express, Spring, Ruby on Rails, Django, Laravel, y muchos más. Por tanto, cuales son las ventajas que aporta ASP.NET Core?
 
-* **Speed.** ASP.NET Core is fast. Because .NET code is compiled, it executes much faster than code in interpreted languages like JavaScript or Ruby. ASP.NET Core is also optimized for multithreading and asynchronous tasks. It's common to see a 5-10x speed improvement over code written in Node.js.
-* **Ecosystem.** ASP.NET Core may be new, but .NET has been around for a long time. There are thousands of packages available on NuGet \(the .NET package manager; think npm, Ruby gems, or Maven\). There are already packages available for JSON deserialization, database connectors, PDF generation, or almost anything else you can think of.
-* **Security.** The team at Microsoft takes security seriously, and ASP.NET Core is built to be secure from the ground up. It handles things like sanitizing input data and preventing cross-site request forgery \(XSRF\) automatically, so you don't have to. You also get the benefit of static typing with the .NET compiler, which is like having a very paranoid linter turned on at all times. This makes it harder to do something you didn't intend with a variable or chunk of data.
+* **Velocidad.** ASP.NET Core es realmente rápido. Dado que .NET code es compilado, su ejecución es much mas rapida respecto a otros lenguajes interpretados como es el caso de JavaScript o Ruby. ASP.NET Core ademas esta optimizado para el uso de ejecución multi-hilo y tareas asíncronas. Se puede apreciar una en velocidad de ejecución de unas 5-10 de veces mayor a la velocidad de código escrito en Node.js.
+* **Ecosistema.** ASP.NET Core puede resultar novedoso, pero en realidad la tecnología .NET lleva mucho tiempo en uso. Existen miles de paquetes disponibles en NuGet \(el administrador de paquetes para  .NET; es el equivalente de npm, Ruby gems, o Maven\). Existen actualmente paquetes prácticamente para todo lo que necesites, desde deserialización JSON, conectores para bases de datos, generación de PDFs y prácticamente cualquier cosa que se te pueda ocurrir.
+* **Seguridad.** El equipo de Microsoft se ha tomado la seguridad de este framework muy en serio, y por ellos ASP.NET Core ha sido creado para ser seguro desde sus cimientos. Él se encarga por defecto de manejar cosas como validar la entrada de datos y prevenir posibles ataques XSRF \(Cross-site Request Forgery\), así no tienes que preocuparte de hacerlo tu. Ademas tiene el beneficio de ser un lenguaje con tipado estático gracias al compilador de .NET, lo que nos aporta tener un comprobador de código cubriéndonos las espaldas de forma continua. De esta forma es realmente complicado hacer algo que no tenias intención de hacer con alguna variedad a fragmento de código.
 
 ## .NET Core and .NET Standard
 

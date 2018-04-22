@@ -27,15 +27,15 @@ Gracias al gran trabajo de algunos compañeros fantásticos , el pequeño libro 
 * [**简明 ASP.NET Core 手册**](https://windsting.github.io/little-aspnetcore-book/book/) \(Chinese\)
 * [**The Little ASP .Net Core Book**](https://nbarbettini.gitbooks.io/little-asp-net-core-book) \(English\)
 
-## Who this book is for
+## Para quien esta destinado este libro?
 
-If you're new to programming, this book will introduce you to the patterns and concepts used to build modern web applications. You'll learn how to build a web app \(and how the big pieces fit together\) by building something from scratch! While this little book won't be able to cover absolutely everything you need to know about programming, it'll give you a starting point so you can learn more advanced topics.
+Si eres nuevo en el mundo de la programación, este libro te introducirá los principales patrones y modelos usados actualmente para construir paginas web. Aprenderás como construir una aplicación web \(y como encajan sus principales partes\) partiendo desde cero! La intención de este libro no es cubrir absolutamente todos los conceptos que necesitas saber acerca de la programación, sin embargo te aportara un punto de partida suficiente desde el cual poder aprender conceptos mas avanzados.
 
-If you already code in a backend language like Node, Python, Ruby, Go, or Java, you'll notice a lot of familiar ideas like MVC, view templates, and dependency injection. The code will be in C\#, but it won't look too different from what you already know.
+Si actualmente ya tienes experiencia con código back-end como Node, Python, Ruby, Go, o Java, muchos de los conceptos del libro te resultaran familiares como MVC, Plantillas de Vistas e Inyección de Código. El código de este libro esta escrito en C\#, pero no debería ser muy diferente en otros lenguajes que ya puedes conocer.
 
-If you're an ASP.NET MVC developer, you'll feel right at home! ASP.NET Core adds some new tools and reuses \(and simplifies\) the things you already know. I'll point out some of the differences below.
+Si por otra parte eres un programador de ASP.NET MVC, te sentirás como en casa! ASP.NET Core añade nuevas herramientas y reutiliza \(y simplifica\) conceptos que ya conoces. A continuación detallare algunas de las principales diferencias.
 
-No matter what your previous experience with web programming, this book will teach you everything you need to create a simple and useful web application in ASP.NET Core. You'll learn how to build functionality using backend and frontend code, how to interact with a database, and how to test and deploy the app to the world.
+No importa cual es tu experiencia previa con la programación web, este libro te enseñara todo lo que necesitas saber para crear una simple y util aplicación web en ASP.NET Core. Aprenderás como construir la funcionalidad programando tanto la parte del front-end como la del back.end, como interactuar con una base datos y como realizar tests y publicar la aplicación para todo el mundo.
 
 ## What is ASP.NET Core?
 

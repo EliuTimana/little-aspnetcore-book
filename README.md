@@ -65,13 +65,13 @@ Para terminar con un breve resumen, **.NET Framework** es una diferente implemen
 
 Si tienes alguna duda acerca de todas estas denominaciones, no te preocupes en seguida comenzaros con código real!
 
-## A note to ASP.NET 4 developers
+## Una nota para los programadores de ASP.NET 4
 
-If you haven't used a previous version of ASP.NET, skip ahead to the next chapter!
+Si no has utilizado previamente una version previa de ASP.NET, puedes saltarte este apartado e ir directamente al proximo capitulo!
 
-ASP.NET Core is a complete ground-up rewrite of ASP.NET, with a focus on modernizing the framework and finally decoupling it from System.Web, IIS, and Windows. If you remember all the OWIN/Katana stuff from ASP.NET 4, you're already halfway there: the Katana project became ASP.NET 5 which was ultimately renamed to ASP.NET Core.
+ASP.NET Core es una completa implementación desde cero de ASP.NET, haciendo especial hincapié en la modernización del framework y logrando finalmente una completa separación respecto a System.Web, IIS e incluso Windows. Si recuerdas todos los conceptos de OWIN/Katana en ASP.NET 4, ya tienes mucho camino andado: el proyecto Katana se acabo convirtiendo en ASP.NET 5 el cual finalmente fue renombrado como ASP.NET Core.
 
-Because of the Katana legacy, the `Startup` class is front and center, and there's no more `Application_Start` or `Global.asax`. The entire pipeline is driven by middleware, and there's no longer a split between MVC and Web API: controllers can simply return views, status codes, or data. Dependency injection comes baked in, so you don't need to install and configure a container like StructureMap or Ninject if you don't want to. And the entire framework has been optimized for speed and runtime efficiency.
+Con motivo del legado del proyecto Katana, la clase `Startup`es la entrada y centro de todo en .Net Core, y ya no existen archivos como `Application_Start` o `Global.asax`. Ahora todo el proceso de peticiones gira entorno al uso de middleware y ya no existen separación alguna entre el modelo MVC y la API: los propios controladores pueden retornar desde vistas, hasta estados pasando logicamente por información. Ahora la Inyección de Código viene integrada por defecto, así no es necesaria la instalación y configuración de ningún contenedor como era el caso de StructureMap o Ninject, si no lo crees necesario. Por ultimo el framework ha sido completamente re-diseñador para optimizar su velocidad y eficiencia en tiempo de ejecución.
 
-Alright, enough introduction. Let's dive in to ASP.NET Core!
+Ok, suficiente introducción. Vamos a comenzar a profundizar en ASP.NET Core!
 

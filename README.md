@@ -37,11 +37,11 @@ Si por otra parte eres un programador de ASP.NET MVC, te sentirás como en casa!
 
 No importa cual es tu experiencia previa con la programación web, este libro te enseñara todo lo que necesitas saber para crear una simple y util aplicación web en ASP.NET Core. Aprenderás como construir la funcionalidad programando tanto la parte del front-end como la del back.end, como interactuar con una base datos y como realizar tests y publicar la aplicación para todo el mundo.
 
-## What is ASP.NET Core?
+## Que es ASP.NET Core?
 
-ASP.NET Core is a web framework created by Microsoft for building web applications, APIs, and microservices. It uses common patterns like MVC \(Model-View-Controller\), dependency injection, and a request pipeline comprised of middleware. It's open-source under the Apache 2.0 license, which means the source code is freely available, and the community is encouraged to contribute bug fixes and new features.
+ASP.NET Core es un framework web creado por Microsoft para la construcción de aplicaciones web, APIs, y micro-servicios. Utiliza los principales patrones usados actualmente como MVC \(Modelo-Vista-Controlador\), Inyección de Código, y un Middleware encargado de manipular las peticiones de entrada. El framework es de código abierto con una licencia Apache 2.0, lo que significa que el código esta completamente disponible, y la comunidad esta comprometida a la contribución para la detección de errores y nuevas mejoras.
 
-ASP.NET Core runs on top of Microsoft's .NET runtime, similar to the Java Virtual Machine \(JVM\) or the Ruby interpreter. You can write ASP.NET Core applications in a number of languages \(C\#, Visual Basic, F\#\). C\# is the most popular choice, and it's what I'll use in this book. You can build and run ASP.NET Core applications on Windows, Mac, and Linux.
+ASP.NET Core corre encima del tiempo de ejecución de Microsoft's .NET, similar al funcionamiento de la maquina virtual Java \(JVM\) ó el interprete de Ruby. Por tanto puedes desarrollar tu aplicaciones ASP.NET Core en una gran variedad de lenguajes como C\#, Visual Basic ó F\#. C\# es la opción mas utilizada, y por tanto sera la que usaremos en este libro. Puedes construir y ejecutar tus aplicaciones ASP.NET Core tanto en maquinas Windows, como Mac y Linux.
 
 ## Why do we need another web framework?
 

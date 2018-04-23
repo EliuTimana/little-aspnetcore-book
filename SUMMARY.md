@@ -4,7 +4,7 @@
 * [Tu primera aplicación](your-first-application/README.md)
   * [Instala el SDK](your-first-application/get-the-sdk.md)
   * [Hello World en C\#](your-first-application/hello-world-in-c.md)
-  * [Create an ASP.NET Core project](your-first-application/create-an-asp.net-core-project.md)
+  * [Crear un proyecto ASP.NET Core](your-first-application/create-an-asp.net-core-project.md)
 * [MVC basics](mvc-basics/README.md)
   * [Create a controller](mvc-basics/create-a-controller.md)
   * [Create models](mvc-basics/create-models.md)

@@ -1,12 +1,12 @@
-# Create an ASP.NET Core project
+# Crear un proyecto ASP.NET Core
 
-If you're still in the directory you created for the Hello World sample, move back up to your Documents or home directory:
+Si aun estas dentro del directorio que creaste para el programa Hello World, muévete fuera de la carpeta y dirigirte al directorio Documents :
 
 ```text
 cd ..
 ```
 
-Next, create a new project with `dotnet new`, this time with some extra options:
+A continuación, crea un nuevo proyecto con el comando`dotnet new`, esta vez con una parámetros extra:
 
 ```text
 dotnet new mvc --auth Individual -o AspNetCoreTodo
@@ -14,9 +14,9 @@ dotnet new mvc --auth Individual -o AspNetCoreTodo
 cd AspNetCoreTodo
 ```
 
-This creates a new project from the `mvc` template, and adds some additional authentication and security bits to the project. \(I'll cover security in the _Security and identity_ chapter.\)
+Este comando crea un nuevo proyecto utilizando la plantilla `mvc`,  y añade alguna características extras para la autenticación y la seguridad al proyecto. \(Esta parte la cubriré en el apartado de _Seguridad e Identidad_\)
 
-You'll see quite a few files show up in the new project directory. Once you `cd` into the new directory, all you have to do is run the project:
+Deberías comprobar como se han creado una series de nuevos ficheros en el directorio `AspNetCoreTodo `. Una vez que estas dentro el directorio con el comando`cd`, todo lo que tienes que hacer para ejecutar el proyecto es escribir el siguiente comando en tu terminal:
 
 ```text
 dotnet run
@@ -25,11 +25,11 @@ Now listening on: http://localhost:5000
 Application started. Press Ctrl+C to shut down.
 ```
 
-Instead of printing to the console and exiting, this program starts a web server and waits for requests on port 5000.
+En esta ocasión en lugar de mostrar el texto por pantalla y finalizar la ejecución del programa, este programa arranca un servidor web y se queda esperando peticiones en el puerto 5000.
 
-Open your web browser and navigate to `http://localhost:5000`. You'll see the default ASP.NET Core splash page, which means your project is working! When you're done, press Ctrl-C in the terminal window to stop the server.
+Abre tu navegador web favorito e introduce esta direccion`http://localhost:5000`. Deberías ver la pagina por defecto que nos crea la plantilla de ASP.NET Core, lo que significa que tu proyecto se esta ejecutando correctamente! Cuando estés listo, pulsa Ctrl-C en el terminal para finalizar la ejecución del programa.
 
-## The parts of an ASP.NET Core project
+## Las partes de un proyecto ASP.NET Core
 
 The `dotnet new mvc` template generates a number of files and directories for you. Here are the most important things you get out of the box:
 
@@ -38,23 +38,23 @@ The `dotnet new mvc` template generates a number of files and directories for yo
 * The **wwwroot** directory contains static assets like CSS, JavaScript, and image files. Files in `wwwroot` will be served as static content, and can be bundled and minified automatically.
 * The **appsettings.json** file contains configuration settings ASP.NET Core will load on startup. You can use this to store database connection strings or other things that you don't want to hard-code.
 
-## Tips for Visual Studio Code
+## Trucos para Visual Studio Code
 
-If you're using Visual Studio Code \(or Visual Studio\) for the first time, here are a couple of helpful tips to get you started:
+Si finalmente te has decidido por Visual Studio Code \(o Visual Studio\) y es tu primera vez con él, aquí te dejo algunos consejos muy útiles para iniciarse:
 
-* **F5 to run \(and debug breakpoints\)**: With your project open, press F5 to run the project in debug mode. This is the same as `dotnet run` on the command line, but you have the benefit of setting breakpoints in your code by clicking on the left margin:
+* **F5 para ejecutar \(y hacer debug con puntos de ruptura\)**: Con el proyecto abierto, pulsa F5 para ejecutar el programa en modo **Debug**. El resultado es el mismo que ejecutar`dotnet run` desde el terminal, pero con la ventaja de poder añadir puntos de ruptura en tu código simplemente haciendo clic en el panel izquierdo del editor:
 
 ![Breakpoint in Visual Studio Code](../.gitbook/assets/breakpoint%20%281%29.png)
 
-* **Lightbulb to fix problems**: If your code contains red squiggles \(compiler errors\), put your cursor on the code that's red and look for the lightbulb icon on the left margin. The lightbulb menu will suggest common fixes, like adding a missing `using` statement to your code:
+* **Bombilla para solucionar**: Si tu código contiene marcas rojas \(errores de compilación\), pon el cursor en el código que esta subrayado en rojo y acerca el cursor a la bombilla amarilla en el margen izquierdo. El menú de la misma te mostrara sugerencias típicas, como puede ser el caso de añadir un `using` a tu código:
 
 ![Lightbulb suggestions](../.gitbook/assets/lightbulb.png)
 
-* **Compile quickly**: Use the shortcut `Command-Shift-B` or `Control-Shift-B` to run the Build task, which does the same thing as `dotnet build`.
+* **Compilado rápido**: Utiliza el atajo de teclado`Command-Shift-B` o `Control-Shift-B` para ejecutar la tarea Build , la cual realiza la misma operación que el comando`dotnet build`.
 
-## A note about Git
+## Un apunte acerca de Git
 
-If you use Git or GitHub to manage your source code, now is a good time to do `git init` and initialize a Git repository in the project directory. Make sure you add a `.gitignore` file that ignores the `bin` and `obj` directories. The Visual Studio template on GitHub's gitignore template repo \([https://github.com/github/gitignore](https://github.com/github/gitignore)\) works great.
+Si eres de lo que utiliza Git o GitHub para manejar tu código fuente, ahora es el momento para para crear un repositorio git en el directory del proyecto con el comando`git init` . Asegúrate de añadir el fichero`.gitignore` para ignorar los directorios`bin` y`obj`. La plantilla para Visual Studio disponible en el repositorio de GitHub \([https://github.com/github/gitignore](https://github.com/github/gitignore)\) funciona de maravilla.
 
-There's plenty more to explore, so let's dive in and start building an application!
+Tenemos mucho que explorar por delante, así que vamos a comenzar a profundizar y crear una aplicación!
 

@@ -1,4 +1,4 @@
-# MVC basics
+# Conceptos básicos sobre MVC
 
 In this chapter, you'll explore the MVC system in ASP.NET Core. **MVC** \(Model-View-Controller\) is a pattern for building web applications that's used in almost every web framework \(Ruby on Rails and Express are popular examples\), plus frontend JavaScript frameworks like Angular. Mobile apps on iOS and Android use a variation of MVC as well.
 

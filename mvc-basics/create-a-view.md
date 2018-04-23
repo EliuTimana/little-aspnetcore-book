@@ -1,4 +1,4 @@
-# Create a view
+# Crear una Vista
 
 Views in ASP.NET Core are built using the Razor templating language, which combines HTML and C\# code. \(If you've written pages using Handlebars moustaches, ERB in Ruby on Rails, or Thymeleaf in Java, you've already got the basic idea.\)
 

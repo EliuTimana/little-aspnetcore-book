@@ -14,7 +14,7 @@ This creates a new migration called `AddItems` by examining any changes you've m
 
 If you open up the `Data/Migrations` directory, you'll see a few files:
 
-![Multiple migrations](../.gitbook/assets/migrations.png)
+![Multiple migrations](../.gitbook/assets/migrations%20%281%29.png)
 
 The first migration file \(with a name like `00_CreateIdentitySchema.cs`\) was created and applied for you way back when you ran `dotnet new`. Your new `AddItem` migration is prefixed with a timestamp when you create it.
 

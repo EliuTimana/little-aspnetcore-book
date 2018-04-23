@@ -47,7 +47,7 @@ If you're using Visual Studio Code \(or Visual Studio\) for the first time, here
 
 * **Lightbulb to fix problems**: If your code contains red squiggles \(compiler errors\), put your cursor on the code that's red and look for the lightbulb icon on the left margin. The lightbulb menu will suggest common fixes, like adding a missing `using` statement to your code:
 
-![Lightbulb suggestions](../.gitbook/assets/lightbulb.png)
+![Lightbulb suggestions](../.gitbook/assets/lightbulb%20%281%29.png)
 
 * **Compile quickly**: Use the shortcut `Command-Shift-B` or `Control-Shift-B` to run the Build task, which does the same thing as `dotnet build`.
 

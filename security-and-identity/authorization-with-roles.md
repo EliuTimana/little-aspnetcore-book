@@ -127,7 +127,7 @@ Finally, create a view for the Index action:
 
 Start up the application and try to access the `/ManageUsers` route while logged in as a normal user. You'll see this access denied page:
 
-![Access denied error](../.gitbook/assets/access-denied.png)
+![Access denied error](../.gitbook/assets/access-denied%20%281%29.png)
 
 That's because users aren't assigned the `Administrator` role automatically.
 

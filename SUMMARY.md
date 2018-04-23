@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Your first application](your-first-application/README.md)
+* [Tu primera aplicación](your-first-application/README.md)
   * [Get the SDK](your-first-application/get-the-sdk.md)
   * [Hello World in C\#](your-first-application/hello-world-in-c.md)
   * [Create an ASP.NET Core project](your-first-application/create-an-asp.net-core-project.md)

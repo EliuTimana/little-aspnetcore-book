@@ -10,7 +10,7 @@
   * [Crear los Modelos](mvc-basics/create-models.md)
   * [Crear una Vista](mvc-basics/create-a-view.md)
   * [Añadir un Servicio](mvc-basics/add-a-service-class.md)
-  * [Utilizar la Inyección de Código](mvc-basics/use-dependency-injection.md)
+  * [Use dependency injection](mvc-basics/use-dependency-injection.md)
   * [Finish the controller](mvc-basics/finish-the-controller.md)
 * [Add external packages](add-external-packages.md)
 * [Use a database](use-a-database/README.md)

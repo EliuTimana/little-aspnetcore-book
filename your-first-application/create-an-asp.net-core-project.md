@@ -31,12 +31,12 @@ Abre tu navegador web favorito e introduce esta direccion`http://localhost:5000`
 
 ## Las partes de un proyecto ASP.NET Core
 
-The `dotnet new mvc` template generates a number of files and directories for you. Here are the most important things you get out of the box:
+La plantilla`dotnet new mvc` crea una gran variedad de ficheros y directorios por ti. A continuación se detallan los mas importantes que se generan sin ninguna tipo de configuración:
 
-* The **Program.cs** and **Startup.cs** files set up the web server and ASP.NET Core pipeline. The `Startup` class is where you can add middleware that handles and modifies incoming requests, and serves things like static content or error pages. It's also where you add your own services to the dependency injection container \(more on this later\).
-* The **Models**, **Views**, and **Controllers** directories contain the components of the Model-View-Controller \(MVC\) architecture. You'll explore all three in the next chapter.
-* The **wwwroot** directory contains static assets like CSS, JavaScript, and image files. Files in `wwwroot` will be served as static content, and can be bundled and minified automatically.
-* The **appsettings.json** file contains configuration settings ASP.NET Core will load on startup. You can use this to store database connection strings or other things that you don't want to hard-code.
+* Los ficheros **Program.cs** y **Startup.cs** configuran e inicializan el servidor web y el pipeline de ASP.NET Core. La clase `Startup` es donde podrás añadir el middleware encargado de manejar y modificar todas las peticiones entrantes, ademas es la encargada de servir cosas como el contenido estático o paginas de errores cuando las peticiones no son correctas. También es donde podrás añadir tus propios servicios al contenedor de inyección de código \(hablaremos mas adelante sobre ello\).
+* Los directorios de **Models**, **Views **y **Controllers** contienen todos los componentes de la arquitectura Modelo-Vista-Controlador \(MVC\). En el próximo capitulo podrás explorar mas acerca de este aspecto.
+* El directorio **wwwroot** contiene todo el código estático de la aplicación como puede ser CSS, JavaScript, e imágenes. Los ficheros que se encuentren dentro del directorio `wwwroot` serán servidos como contenido estático y por tanto podrán ser incluidos y minimizados automáticamente.
+* El fichero **appsettings.json** contiene todos los ajustes de configuración que ASP.NET Core cargara en el arranque. Puedes utilizar este fichero para almacenar todos los strings necesarios para la conexión con la bases de datos u otro tipo de cosas que no quieras escribir directamente en el código fuente.
 
 ## Trucos para Visual Studio Code
 

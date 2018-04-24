@@ -1,8 +1,8 @@
 # Crear los Modelos
 
-There are two separate model classes that need to be created: a model that represents a to-do item stored in the database \(sometimes called an **entity**\), and the model that will be combined with a view \(the **MV** in MVC\) and sent back to the user's browser. Because both of them can be referred to as "models", I'll refer to the latter as a **view model**.
+Hay 2 tipos diferentes de clases de modelos que necesitan ser creadas: un modelo que representa un item de tipo to-do en la base de datos \(usualmente denominado **entidad**\) y un modelo que se combinara con una vista \(las siglas **MV** en MVC\) y sera enviado de vuelta al navegador web del usuario. Dado que ambos modelos pueden ser denominados como "modelos", yo prefiero denominador a este ultimo como **modelo de vista**.
 
-First, create a class called `TodoItem` in the Models directory:
+En primer lugar, crea una clase denominada`TodoItem` en el directorio de los modelos:
 
 `Models/TodoItem.cs`
 
@@ -24,20 +24,20 @@ namespace AspNetCoreTodo.Models
 }
 ```
 
-This class defines what the database will need to store for each to-do item: an ID, a title or name, whether the item is complete, and what the due date is. Each line defines a property of the class:
+Esta clase define que sera necesario almacenar en la base de datos para cada item de tipo to-do, es decir: un ID, un titulo o nombre, si el item esta completado y por ultimo cual es su fecha de creación . Cada linea  del código superior define una propiedad de la clase:
 
-* The **Id** property is a guid, or a **g**lobally **u**nique **id**entifier. Guids \(or GUIDs\) are long strings of letters and numbers, like `43ec09f2-7f70-4f4b-9559-65011d5781bb`. Because guids are random and are extremely unlikely to be accidentally duplicated, they are commonly used as unique IDs. You could also use a number \(integer\) as a database entity ID, but you'd need to configure your database to always increment the number when new rows are added to the database. Guids are generated randomly, so you don't have to worry about auto-incrementing.
-* The **IsDone** property is a boolean \(true/false value\). By default, it will be `false` for all new items. Later you'll use write code to switch this property to `true` when the user clicks an item's checkbox in the view.
-* The **Title** property is a string. This will hold the name or description of the to-do item.
-* The **DueAt** property is a `DateTimeOffset`, which is a C\# type that stores a date/time stamp along with a timezone offset from UTC. Storing the date, time, and timezone offset together makes it easy to render dates accurately on systems in different timezones.
+* La propiedad **Id** es de tipo guid \(**g**lobally **u**nique **id**entifier\). Guids \(o GUIDs\) son strings de gran tamaño formados por letras y números, como por ejemplo `43ec09f2-7f70-4f4b-9559-65011d5781bb`. Debido a que estos guids son aleatorios y que rara vez se duplican, son muy utilizados para generar identificadores únicos. Podrías utilizar un numero entero como identificador de la entidad dentro de la base de datos, pero entonces necesitarías configurar también el auto incremento del identificador cada vez que añadieras un elemento en la base de datos. Los GUIDS son generados de manera aleatoria , por lo que no tienes que preocuparte de este auto incremento.
+* La propiedad **IsDone** es de tipo boleano \(valor verdadero/false\). Por defecto siempre sera `falso` cuando se creen nuevos items. Mas adelante harás uso de código para cambiar el estado de la propiedad a `verdadero` cuando el usuario haga clic en el checkbox del item dentro de la vista .
+* La propiedad **Title** es e tipo string. En ella se almacenara el nombre o breve descripción de cada item de tipo to-do.
+* La propiedad **DueAt** es de tipo`DateTimeOffset`, el cual almacena una fecha junto con su zona horaria respecto al UTC. Almacenar juntos la fecha, la hora y la zona horaria permite renderizar de una forma mas sencilla diferentes fechas en diferentes zonas horarias.
 
-Notice the `?` question mark after the `DateTimeOffset` type? That marks the DueAt property as **nullable**, or optional. If the `?` wasn't included, every to-do item would need to have a due date. The `Id` and `IsDone` properties aren't marked as nullable, so they are required and will always have a value \(or a default value\).
+Te das cuenta del`?` `DateTimeOffset` ? Esa marca nos indica que es propiedad puede ser **nula**, o lo que es lo mismo opcional. Si el `?` no estuviera incluido, cada item debería tener especificado una fecha de creación. Las propiedades `Id` e`IsDone` no están definidas como opcionales,  por lo que son obligatorias y por tanto siempre deben tener un valor \(o valor por defecto\).
 
-> Strings in C\# are always nullable, so there's no need to mark the Title property as nullable. C\# strings can be null, empty, or contain text.
+> Los Strings en C\# siempre son de tipo opcional, por lo que no es necesario marcar la propiedad Title con ?. Los strings en C\# pueden ser null, vacíos o contener texto.
 
-Each property is followed by `get; set;`, which is a shorthand way of saying the property is read/write \(or, more technically, it has a getter and setter methods\).
+Cada una de propiedades arriba definidas esta seguida del codigo`get; set;`, el cual es un atajo para indicar que son de tipo lectura/escritura \(o siendo más técnicos, que tiene definidos unos métodos denominados getters y setters\).
 
-At this point, it doesn't matter what the underlying database technology is. It could be SQL Server, MySQL, MongoDB, Redis, or something more exotic. This model defines what the database row or entry will look like in C\# so you don't have to worry about the low-level database stuff in your code. This simple style of model is sometimes called a "plain old C\# object" or POCO.
+Llegados a este punto, ya no es relevante el tipo de tecnología que se este utilizando en las bases de datos. Esta podría ser de tipo SQL Server, MySQL, MongoDB, Redis, o incluso algo mas exótico. El modelo se encarga de definir en codigo C\# el formato de la entidad de tal forma que no tengas que preocuparte como funciona la base de datos a bajo nivel. Este estilo simple de crear lo modelos suele ser denominado "Plain Old C\# Object" o **POCO**.
 
 ## El modelo de la vista
 

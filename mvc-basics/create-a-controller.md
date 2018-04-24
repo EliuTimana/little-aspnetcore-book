@@ -1,8 +1,8 @@
 # Crear un Controlador
 
-There are already a few controllers in the project's Controllers directory, including the `HomeController` that renders the default welcome screen you see when you visit `http://localhost:5000`. You can ignore these controllers for now.
+Actualmente ya existe una serie de controlador en el directorio del proyecto, incluyendo `HomeController` encargado de renderizar la pagina de bienvenida por defecto que se muestra cuando visitas la dirección`http://localhost:5000`. Puedes ignorar estos controladores por ahora.
 
-Create a new controller for the to-do list functionality, called `TodoController`, and add the following code:
+Crear un nuevo controlador, llámalo`TodoController`, encargado de la funcionalidad de la aplicación To-Do y añade el siguiente código:
 
 `Controllers/TodoController.cs`
 
@@ -17,12 +17,12 @@ namespace AspNetCoreTodo.Controllers
 {
     public class TodoController : Controller
     {
-        // Actions go here
+        // Las acciones iran aquí
     }
 }
 ```
 
-Routes that are handled by controllers are called **actions**, and are represented by methods in the controller class. For example, the `HomeController` includes three action methods \(`Index`, `About`, and `Contact`\) which are mapped by ASP.NET Core to these route URLs:
+Las Rutas que maneja el controlador son denominadas **acciones **y estas están representadas por métodos dentro de la clase del controlador. Por ejemplo, el controlador  `HomeController` incluye 3 acciones \(métodos\) \(`Index`, `About`y `Contact`\) los cuales son mapeados por ASP.NET Core a las siguientes rutas URL:
 
 ```text
 localhost:5000/Home         -> Index()
@@ -30,27 +30,28 @@ localhost:5000/Home/About   -> About()
 localhost:5000/Home/Contact -> Contact()
 ```
 
-There are a number of conventions \(common patterns\) used by ASP.NET Core, such as the pattern that `FooController` becomes `/Foo`, and the `Index` action name can be left out of the URL. You can customize this behavior if you'd like, but for now, we'll stick to the default conventions.
+Existen una serie de convenciones \(patrones comunes\) utilizados por ASP.NET Core, como es el caso de `FooController` el cual responde a la URL `/Foo`y la acción `Index` puede quedar fuera de la dirección URL ya que es la ejecutada por defecto. Este comportamiento es modificable si lo crees necesario, pero por ahora vamos a seguir utilizando los convencionalismos.
 
-Add a new action called `Index` to the `TodoController`, replacing the `// Actions go here` comment:
+Añade una nueva acción denominada `Index` en el controlador`TodoController`, modificando el comentario `// Las acciones iran aqui`:
 
 ```csharp
 public class TodoController : Controller
 {
     public IActionResult Index()
     {
-        // Get to-do items from database
+        // Obtiene los items de la base de datos
 
-        // Put items into a model
+        // Convierte los items en modelos
 
-        // Render view using the model
+        // Renderiza la vista utilizando el modelo
     }
 }
 ```
 
-Action methods can return views, JSON data, or HTTP status codes like `200 OK` and `404 Not Found`. The `IActionResult` return type gives you the flexibility to return any of these from the action.
+Los métodos \(acciones\) pueden retornar tanto vistas, como datos en formato JSON, o estados HTTP como puede ser el caso de `200 OK` y `404 Not Found`. El tipo que devuelve`IActionResult` permite retornar cualquiera de esos tipos anteriormente citados.
 
-It's a best practice to keep controllers as lightweight as possible. In this case, the controller will be responsible for getting the to-do items from the database, putting those items into a model the view can understand, and sending the view back to the user's browser.
+  
+Una muy buena practica es mantener los controladores los mas simples posibles. En este caso, el controlador sera el responsable de obtener los items de la base de datos, generar un modelo con dichos items que la vista puede comprender y por ultimo enviar una vista de vuelta al navegador del usuario.
 
-Before you can write the rest of the controller code, you need to create a model and a view.
+Antes de poder completar el resto del controlador es necesario crear un modelos y una vista.
 

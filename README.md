@@ -27,7 +27,7 @@ El libro esta inmerso en una continua actualización con correcciones de errores
 
 Gracias al gran trabajo de algunos compañeros fantásticos , el pequeño libro ASP.NET Core Book ha sido traducido a otros idiomas:
 
-* [**The Little ASP .Net Core Book**](https://nbarbettini.gitbooks.io/little-asp-net-core-book) \(English\)
+* [**The Little ASP .Net Core Book**](https://nbarbettini.gitbooks.io/little-asp-net-core-book) \(Original English\)
 * [**ASP.NET Core El Kitabı**](https://sahinyanlik.gitbooks.io/kisa-asp-net-core-kitabi/) \(Turkish\)
 * [**简明 ASP.NET Core 手册**](https://windsting.github.io/little-aspnetcore-book/book/) \(Chinese\)
 

@@ -39,11 +39,11 @@ Each property is followed by `get; set;`, which is a shorthand way of saying the
 
 At this point, it doesn't matter what the underlying database technology is. It could be SQL Server, MySQL, MongoDB, Redis, or something more exotic. This model defines what the database row or entry will look like in C\# so you don't have to worry about the low-level database stuff in your code. This simple style of model is sometimes called a "plain old C\# object" or POCO.
 
-## The view model
+## El modelo de la vista
 
-Often, the model \(entity\) you store in the database is similar but not _exactly_ the same as the model you want to use in MVC \(the view model\). In this case, the `TodoItem` model represents a single item in the database, but the view might need to display two, ten, or a hundred to-do items \(depending on how badly the user is procrastinating\).
+Frecuentemente, el modelo \(entidad\) que almacenas en la base de datos es muy similar pero no exactamente el mismo al que necesitas utilizar en MVC \(el modelo de la vista\). En este caso, el modelo `TodoItem` representa a un único item en la base de datos, pero la vista posiblemente necesite 2, 10, o cientos items.
 
-Because of this, the view model should be a separate class that holds an array of `TodoItem`s:
+Como consecuencia de esto, el modelo de la vista debe ser una clase independiente que almacene un array de`TodoItem`s:
 
 `Models/TodoViewModel.cs`
 
@@ -57,5 +57,5 @@ namespace AspNetCoreTodo.Models
 }
 ```
 
-Now that you have some models, it's time to create a view that will take a `TodoViewModel` and render the right HTML to show the user their to-do list.
+Ahora que ya dispones de los modelos, es tiempo de crear una vista que haga usado del modelo`TodoViewModel` y genere el HTML correcto para mostrar al usuario la lista de To-Dos.
 

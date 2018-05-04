@@ -1,12 +1,12 @@
 # Crear una Vista
 
-Views in ASP.NET Core are built using the Razor templating language, which combines HTML and C\# code. \(If you've written pages using Handlebars moustaches, ERB in Ruby on Rails, or Thymeleaf in Java, you've already got the basic idea.\)
+Las vistas en ASP.NET Core están construidas con un lenguaje de plantillas denominado Razor, el cual combina el uso de código HTML y C\#. \(Si ya has trabajado con ERB en Ruby On Rails, Handlebars con Mustache o Thymeleaf en Java, ya tendrás una idea acerca de este tipo de lenguajes.\)
 
-Most view code is just HTML, with the occasional C\# statement added in to pull data out of the view model and turn it into text or HTML. The C\# statements are prefixed with the `@` symbol.
+La mayor parte del código es HTML, con algún fragmento de código C\# utilizado para obtener información del modelo y añadirla de forma dinámica a la vista del modelo como texto ó HTML. Los fragmentos de código C\# llevan el prefijo `@`.
 
-The view rendered by the `Index` action of the `TodoController` needs to take the data in the view model \(a sequence of to-do items\) and display it in a nice table for the user. By convention, views are placed in the `Views` directory, in a subdirectory corresponding to the controller name. The file name of the view is the name of the action with a `.cshtml` extension.
+La vista que es renderizada por la acción `Index` del controlador `TodoController` necesita insertar la información obtenida en la vista del modelo \(en este caso una secuencia de items de la aplicación to-do\) y mostrarla para el usuario dentro de una tabla. Por convención, las vistas están localizadas en el directorio `Views` , en un subdirectorio con el nombre del correspondiente controlador. El nombre del fichero de la vista es el nombre de la acción con la extensión `.cshtml`.
 
-Create a `Todo` directory inside the `Views` directory, and add this file:
+Crear un directorio llamado `Todo` dentro del directorio `Views`, y añade este código:
 
 `Views/Todo/Index.cshtml`
 
@@ -42,24 +42,24 @@ Create a `Todo` directory inside the `Views` directory, and add this file:
   </table>
 
   <div class="panel-footer add-item-form">
-    <!-- TODO: Add item form -->
+    <!-- TODO: Añadir el formulario para añadir items -->
   </div>
 </div>
 ```
 
-At the very top of the file, the `@model` directive tells Razor which model to expect this view to be bound to. The model is accessed through the `Model` property.
+En la parte superior del fichero, la directiva `@model` le proporciona información a Razor indicando que modelo debe esperar y  utilizar esta vista. El modelo es accesible a través de la propiedad `Model`.
 
-Assuming there are any to-do items in `Model.Items`, the `foreach` statement will loop over each to-do item and render a table row \(`<tr>` element\) containing the item's name and due date. A checkbox is also rendered that will let the user mark the item as complete.
+Asumiendo que existirán items en  `Model.Items`, la declaración `foreach` nos permitirá iterar sobre cada unos de ellos y renderizar la fila de la tabla el \(elemento `<tr>`\) conteniendo el nombre y fecha de creación de cada item. Ademas es también renderizado un checkbox que nos permitirá marcar como completado un item si lo creemos necesario.
 
-## The layout file
+## El fichero layout
 
-You might be wondering where the rest of the HTML is: what about the `<body>` tag, or the header and footer of the page? ASP.NET Core uses a layout view that defines the base structure that every other view is rendered inside of. It's stored in `Views/Shared/_Layout.cshtml`.
+Quizá te estes preguntando donde esta el resto del fichero HTML? Donde se encuentra la etiqueta `<body>`? El header o el footer de la pagina? ASP.NET Core utiliza una vista denominada layout que nos permite definir una estructura básica para cada pagina HTML dentro de nuestra aplicación. Este layout esta ubicado en la siguiente ruta `Views/Shared/_Layout.cshtml`.
 
-The default ASP.NET Core template includes Bootstrap and jQuery in this layout file, so you can quickly create a web application. Of course, you can use your own CSS and JavaScript libraries if you'd like.
+Por defecto la plantilla ASP.NET Core incluye Bootstrap y jQuery dentro de este layout, de tal forma que de una forma rapida y sencilla puedas crear un aplicación web. Por supuesto siempre tendrás la posibilidad de utilizar tus propias hojas de estilos y librerías JavaScript si lo así lo cress necesario.
 
-## Customizing the stylesheet
+## Personalizar las hoja de estilos
 
-The default template also includes a stylesheet with some basic CSS rules. The stylesheet is stored in the `wwwroot/css` directory. Add a few new CSS style rules to the bottom of the `site.css` file:
+La plantillas por defecto ademas incluye una hoja de estilos con algunas reglas CSS básicas. Esta hoja de estilos esta ubicada en el directorio `wwwroot/css`. Por favor añade la siguientes reglas CSS al final del fichero`site.css`:
 
 `wwwroot/css/site.css`
 
@@ -74,7 +74,7 @@ table tr.done {
 }
 ```
 
-You can use CSS rules like these to completely customize how your pages look and feel.
+Podrás utilizar reglas CSS como estas para personalizar completamente el aspecto de tus paginas web.
 
-ASP.NET Core and Razor can do much more, such as partial views and server-rendered view components, but a simple layout and view is all you need for now. The official ASP.NET Core documentation \(at [https://docs.asp.net](https://docs.asp.net)\) contains a number of examples if you'd like to learn more.
+Como veremos mas adelante ASP.NET Core y Razor nos permiten hacer esto y mucho más, como por ejemplo hacer uso de vistas parciales y vistas basadas en componentes, pero por ahora con este sencillo layout y una vista es todo lo que necesitamos. La documentación oficial de ASP.NET Core \([https://docs.asp.net](https://docs.asp.net)\) contiene un gran variedad de ejemplos si tienes interés en profundizar un poco mas sobre este tema.
 

@@ -11,7 +11,7 @@
   * [Crear una Vista](mvc-basics/create-a-view.md)
   * [Añadir un Servicio](mvc-basics/add-a-service-class.md)
   * [Utilizar la Inyección de Código](mvc-basics/use-dependency-injection.md)
-  * [Completar el Controlador](mvc-basics/finish-the-controller.md)
+  * [Completa el Controlador](mvc-basics/finish-the-controller.md)
 * [Add external packages](add-external-packages.md)
 * [Use a database](use-a-database/README.md)
   * [Connect to a database](use-a-database/connect-to-a-database.md)

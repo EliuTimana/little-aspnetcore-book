@@ -1,8 +1,8 @@
-# Completar el Controlador
+# Completa el Controlador
 
-## Completar el Controlador
+## Completa el Controlador
 
-The last step is to finish the controller code. The controller now has a list of to-do items from the service layer, and it needs to put those items into a `TodoViewModel` and bind that model to the view you created earlier:
+El ultimo paso es completar definitivamente el controlador ToDo. En este momento el controlador contiene una lista de items obtenidos a través del servicio que creamos previamente, y necesitamos enviar dichos items a la vista del modelo `TodoViewModel` para en ultimo lugar unir el modelo con las vista que acabamos de crear:
 
 `Controllers/TodoController.cs`
 
@@ -20,20 +20,20 @@ public async Task<IActionResult> Index()
 }
 ```
 
-If you haven't already, make sure these `using` statements are at the top of the file:
+Si aun no lo has hecho, asegúrate de incluir en la parte superior del fichero las siguientes declaraciones  `using`:
 
 ```csharp
 using AspNetCoreTodo.Services;
 using AspNetCoreTodo.Models;
 ```
 
-If you're using Visual Studio or Visual Studio Code, the editor will suggest these `using` statements when you put your cursor on a red squiggly line.
+Si estas utilizando Visual Studio o Visual Studio Code, el propio editor te sugerirá añadir estas declaraciones cuando pases el cursor sobre las lineas rojas de error.
 
-## Test it out
+## Ahora de probar!
 
-To start the application, press F5 \(if you're using Visual Studio or Visual Studio Code\), or just type `dotnet run` in the terminal. If the code compiles without errors, the server will start up on port 5000 by default.
+Para iniciar la aplicación, presiona F5 \(si estas utilizando Visual Studio o Visual Studio Code\), o simplemente ejecutar el comando `dotnet run` dentro del terminal. Si el código compila sin errores, el servidor arrancara en el puerto 5000 por defecto.
 
-If your web browser didn't open automatically, open it and navigate to [http://localhost:5000/todo](http://localhost:5000/todo). You'll see the view you created, with the data pulled from your fake database \(for now\).
+Si tu navegador web no se abre de forma automática, ábrelo tu mismo y dirígete a la siguiente dirección [http://localhost:5000/todo](http://localhost:5000/todo). Deberías ver la vista con la tabla que has creado previamente, con los datos obtenidos de la falsa base de datos \(de forma temporal\).
 
-Congratulations! You've built a working ASP.NET Core application. Next, you'll take it further with third-party packages and real database code.
+Enhorabuena! Has creado y ejecutado correctamente tu primera aplicación ASP.NET Core . En el proximo capitulo, seras capaz de ir un paso mas allá con el uso de paquetes de terceros y una base de datos real.
 

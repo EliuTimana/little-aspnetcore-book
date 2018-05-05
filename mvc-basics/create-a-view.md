@@ -1,4 +1,4 @@
-# Crear una Vista
+# Crea una Vista
 
 Las vistas en ASP.NET Core están construidas con un lenguaje de plantillas denominado Razor, el cual combina el uso de código HTML y C\#. \(Si ya has trabajado con ERB en Ruby On Rails, Handlebars con Mustache o Thymeleaf en Java, ya tendrás una idea acerca de este tipo de lenguajes.\)
 

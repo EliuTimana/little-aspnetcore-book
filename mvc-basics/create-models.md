@@ -1,4 +1,4 @@
-# Crear los Modelos
+# Crea los Modelos
 
 Hay 2 tipos diferentes de clases de modelos que necesitan ser creadas: un modelo que representa un item de tipo to-do en la base de datos \(usualmente denominado **entidad**\) y un modelo que se combinara con una vista \(las siglas **MV** en MVC\) y sera enviado de vuelta al navegador web del usuario. Dado que ambos modelos pueden ser denominados como "modelos", yo prefiero denominador a este ultimo como **modelo de vista**.
 

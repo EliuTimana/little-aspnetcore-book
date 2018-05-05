@@ -1,4 +1,4 @@
-# Crear un Controlador
+# Crea un Controlador
 
 Actualmente ya existe una serie de controlador en el directorio del proyecto, incluyendo `HomeController` encargado de renderizar la pagina de bienvenida por defecto que se muestra cuando visitas la dirección`http://localhost:5000`. Puedes ignorar estos controladores por ahora.
 

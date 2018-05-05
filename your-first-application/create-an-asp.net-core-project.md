@@ -1,4 +1,4 @@
-# Crear un proyecto ASP.NET Core
+# Crea un proyecto ASP.NET Core
 
 Si aun estas dentro del directorio que creaste para el programa Hello World, muévete fuera de la carpeta y dirigirte al directorio Documents :
 

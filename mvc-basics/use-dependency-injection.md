@@ -1,6 +1,6 @@
 # Utiliza la Inyección de Código
 
-Back in the `TodoController`, add some code to work with the `ITodoItemService`:
+Volviendo al controlador `TodoController`, añade las siguientes lineas de código para poder trabajar con la interfaz `ITodoItemService`:
 
 ```csharp
 public class TodoController : Controller
@@ -14,28 +14,28 @@ public class TodoController : Controller
 
     public IActionResult Index()
     {
-        // Get to-do items from database
+        // Obtener los items de la base de dastos
 
-        // Put items into a model
+        // Convertir los items al modelo
 
-        // Pass the view to a model and render
+        // Pasar la vista al modelo y renderizarla
     }
 }
 ```
 
-Since `ITodoItemService` is in the `Services` namespace, you'll also need to add a `using` statement at the top:
+Dado que `ITodoItemService` pertenece al namespace `Services`, necesitaras importar la declaración `using` al comienzo del fichero:
 
 ```csharp
 using AspNetCoreTodo.Services;
 ```
 
-The first line of the class declares a private variable to hold a reference to the `ITodoItemService`. This variable lets you use the service from the `Index` action method later \(you'll see how in a minute\).
+La primera linea de la clase declara una variable privada para obtener un objeto de la clase `ITodoItemService`. Esta variable nos permitirá posteriormente utilizar el servicio dentro de la acción/método `Index`  \(lo verás en unos instantes\).
 
-The `public TodoController(ITodoItemService todoItemService)` line defines a **constructor** for the class. The constructor is a special method that is called when you want to create a new instance of a class \(the `TodoController` class, in this case\). By adding an `ITodoItemService` parameter to the constructor, you've declared that in order to create the `TodoController`, you'll need to provide an object that matches the `ITodoItemService` interface.
+La linea `public TodoController(ITodoItemService todoItemService)` define el **constructor** de la clase. El constructor es un método de tipo especial el cual es llamado cada vez que necesites crear una instancia de la su propia clase \(la clase `TodoController` en este caso en particular\). Añadiendo al constructor el parámetro `ITodoItemService`, estas indicando a tu aplicación que para poder crear una instancia de la clase `TodoController`, necesitas que la propia aplicación te proporcione un objeto del tipo de la interfaz `ITodoItemService`.
 
-> Interfaces are awesome because they help decouple \(separate\) the logic of your application. Since the controller depends on the `ITodoItemService` interface, and not on any _specific_ class, it doesn't know or care which class it's actually given. It could be the `FakeTodoItemService`, a different one that talks to a live database, or something else! As long as it matches the interface, the controller can use it. This makes it really easy to test parts of your application separately. I'll cover testing in detail in the _Automated testing_ chapter.
+> Las interfaces son realmente útiles ya que permiten desacoplar \(separar\) la lógica de tu aplicación. Dado que el controlador depende en la interfaz`ITodoItemService`, y no de una _clase en concreto_, la aplicación no debe preocuparse de que clase en realidad esta implementando la interfaz. Podría ser la clase `FakeTodoItemService`, una nueva clase que se conectaría a otro tipo de base de datos, o muchas opciones más! Siempre y cuando la clase implemente correctamente la interfaz, el controlador hará usa de ella. Esto hace realmente sencillo testear partes de tu aplicación por separado. Este aspecto sera cubierto en detalle dentro del capitulo _Pruebas Automatizadas_.
 
-Now you can finally use the `ITodoItemService` \(via the private variable you declared\) in your action method to get to-do items from the service layer:
+Ahora ya estas en condiciones de utilizar la interfaz `ITodoItemService` \(a través de la variable privada que has declarado previamente\) dentro de la método que obtiene el conjunto de items mediante la capa de servicio:
 
 ```csharp
 public IActionResult Index()
@@ -46,11 +46,11 @@ public IActionResult Index()
 }
 ```
 
-Remember that the `GetIncompleteItemsAsync` method returned a `Task<TodoItem[]>`? Returning a `Task` means that the method won't necessarily have a result right away, but you can use the `await` keyword to make sure your code waits until the result is ready before continuing on.
+Recuerdas que el método`GetIncompleteItemsAsync` devuelve un objeto de tipo `Task<TodoItem[]>`? Devolver un objeto de tipo`Task` significa que el método no tiene porque tener necesariamente el resultado inmediatamente, por ello puedes hacer uso de la palabra clave `await` asegurándote que tu código espera hasta que el resultado esta listo antes de continuar con la ejecución.
 
-The `Task` pattern is common when your code calls out to a database or an API service, because it won't be able to return a real result until the database \(or network\) responds. If you've used promises or callbacks in JavaScript or other languages, `Task` is the same idea: the promise that there will be a result - sometime in the future.
+El uso de objetos de tipo `Task` es comúnmente utilizado cuando es necesario acceder a una base de datos o hacer una petición a una API, dado que el el resultado puede no estar disponible hasta que la base de datos o la red estén disponibles. Si has utilizado promesas o callbacks en JavaScript o en otros lenguajes, `Task` se basa en la misma idea: la promesa se convertirá en un resultado en algún momento del futuro.
 
-> If you've had to deal with "callback hell" in older JavaScript code, you're in luck. Dealing with asynchronous code in .NET is much easier thanks to the magic of the `await` keyword! `await` lets your code pause on an async operation, and then pick up where it left off when the underlying database or network request finishes. In the meantime, your application isn't blocked, because it can process other requests as needed. This pattern is simple but takes a little getting used to, so don't worry if this doesn't make sense right away. Just keep following along!
+> Si has tenido que sufrir con el denominado  "callback hell" en código JavaScript, estas de suerte. Trabajar con código asíncrono en .NET es mucho mas sencillo gracias a la palabra clave`await`. `await` permite pausar tu código en un operación asíncrona, y continuar donde se quedo pausada cuando la respuesta de la base de datoe. In the meantime, your application isn't blocked, because it can process other requests as needed. This pattern is simple but takes a little getting used to, so don't worry if this doesn't make sense right away. Just keep following along!
 
 The only catch is that you need to update the `Index` method signature to return a `Task<IActionResult>` instead of just `IActionResult`, and mark it as `async`:
 

@@ -35,7 +35,7 @@ La linea `public TodoController(ITodoItemService todoItemService)` define el **c
 
 > Las interfaces son realmente útiles ya que permiten desacoplar \(separar\) la lógica de tu aplicación. Dado que el controlador depende en la interfaz`ITodoItemService`, y no de una _clase en concreto_, la aplicación no debe preocuparse de que clase en realidad esta implementando la interfaz. Podría ser la clase `FakeTodoItemService`, una nueva clase que se conectaría a otro tipo de base de datos, o muchas opciones más! Siempre y cuando la clase implemente correctamente la interfaz, el controlador hará usa de ella. Esto hace realmente sencillo testear partes de tu aplicación por separado. Este aspecto sera cubierto en detalle dentro del capitulo _Pruebas Automatizadas_.
 
-Ahora ya estas en condiciones de utilizar la interfaz `ITodoItemService` \(a través de la variable privada que has declarado previamente\) dentro de la método que obtiene el conjunto de items mediante la capa de servicio:
+Ahora ya estas en condiciones de utilizar la interfaz `ITodoItemService` \(a través de la variable privada que has declarado previamente\) dentro del método que obtiene el conjunto de items mediante la capa de servicio:
 
 ```csharp
 public IActionResult Index()
@@ -50,47 +50,47 @@ Recuerdas que el método`GetIncompleteItemsAsync` devuelve un objeto de tipo `Ta
 
 El uso de objetos de tipo `Task` es comúnmente utilizado cuando es necesario acceder a una base de datos o hacer una petición a una API, dado que el el resultado puede no estar disponible hasta que la base de datos o la red estén disponibles. Si has utilizado promesas o callbacks en JavaScript o en otros lenguajes, `Task` se basa en la misma idea: la promesa se convertirá en un resultado en algún momento del futuro.
 
-> Si has tenido que sufrir con el denominado  "callback hell" en código JavaScript, estas de suerte. Trabajar con código asíncrono en .NET es mucho mas sencillo gracias a la palabra clave`await`. `await` permite pausar tu código en un operación asíncrona, y continuar donde se quedo pausada cuando la respuesta de la base de datoe. In the meantime, your application isn't blocked, because it can process other requests as needed. This pattern is simple but takes a little getting used to, so don't worry if this doesn't make sense right away. Just keep following along!
+> Si has tenido que sufrir con el denominado  "callback hell" en código JavaScript, estas de suerte. Trabajar con código asíncrono en .NET es mucho mas sencillo gracias a la palabra clave`await`. `await` permite pausar tu código en una operación asíncrona, y continuar donde se quedo pausada cuando la respuesta de la base de datos este lista. Durante el proceso de resolución de la promesa tu aplicación no quedara bloqueada, porque podrá seguir procesando otras peticiones si es necesario. Este patrón de funcionamiento es realmente simple pero cuesta un poco hacerse a él, así que no te preocupes si ahora mismo no lo acabas de comprender por  completo. Simplemente sigue adelante con el tutorial!
 
-The only catch is that you need to update the `Index` method signature to return a `Task<IActionResult>` instead of just `IActionResult`, and mark it as `async`:
+La única modificación que tienes que hacer en el código se encuentro en el método `Index` para que devuelve un objeto de tipo `Task<IActionResult>` en lugar de u`IActionResult`, y por supuesto marcar el método como `async`:
 
 ```csharp
 public async Task<IActionResult> Index()
 {
     var items = await _todoItemService.GetIncompleteItemsAsync();
 
-    // Put items into a model
+    // Convertir los items al modelo
 
-    // Pass the view to a model and render
+    // Pasar la vista al modelo y renderizarla
 }
 ```
 
-You're almost there! You've made the `TodoController` depend on the `ITodoItemService` interface, but you haven't yet told ASP.NET Core that you want the `FakeTodoItemService` to be the actual service that's used under the hood. It might seem obvious right now since you only have one class that implements `ITodoItemService`, but later you'll have multiple classes that implement the same interface, so being explicit is necessary.
+Ya casi lo has logrado! Has modificado el controlador `TodoController` para que dependa de la interfaz `ITodoItemService`, pero no le has especificado a tu aplicación ASP.NET Core cual el servicio que implementa la interfaz y es utilizado por debajo. Puede parecer obvio ahora mismo dado que solo tienes un clase que implemente la interfaz  `ITodoItemService`, pero mas adelante dispondrás de varias clases que implementaran todas la misma interfaz, por lo que es necesario especificar cual en concreto se debe utilizar.
 
-Declaring \(or "wiring up"\) which concrete class to use for each interface is done in the `ConfigureServices` method of the `Startup` class. Right now, it looks something like this:
+La declaración de que clase en concreto sera la utilizada para cada interfaz se realiza en el método`ConfigureServices` de la clase`Startup`. Ahora mismo debería tener un aspecto tal que así:
 
 **Startup.cs**
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
-    // (... some code)
+    // (...)
 
     services.AddMvc();
 }
 ```
 
-The job of the `ConfigureServices` method is adding things to the **service container**, or the collection of services that ASP.NET Core knows about. The `services.AddMvc` line adds the services that the internal ASP.NET Core systems need \(as an experiment, try commenting out this line\). Any other services you want to use in your application must be added to the service container here in `ConfigureServices`.
+El trabajo del método `ConfigureServices` es añadir elementos al **contenedor de servicio**, o la colección de servicios que la aplicación ASP.NET Core tiene constancia. La linea con el codigo`services.AddMvc()` añade los servicios que internamente necesita nuestra aplicación \(puedes probar a comentar esta linea y ver que sucede\). Cualquier otro servicio que necesites utilizar en tu aplicación debe ser añadido al contenedor de servicios de igual forma dentro de él método `ConfigureServices`.
 
-Add the following line anywhere inside the `ConfigureServices` method:
+Añade la siguiente línea dentro del método `ConfigureServices` :
 
 ```csharp
 services.AddSingleton<ITodoItemService, FakeTodoItemService>();
 ```
 
-This line tells ASP.NET Core to use the `FakeTodoItemService` whenever the `ITodoItemService` interface is requested in a constructor \(or anywhere else\).
+Esta linea le dice a la aplicación ASP.NET que debe utilizar la clase`FakeTodoItemService` allá donde la interfaz `ITodoItemService` sea requerida dentro de un constructor \(o en cualquier otro lugar\).
 
-`AddSingleton` adds your service to the service container as a **singleton**. This means that only one copy of the `FakeTodoItemService` is created, and it's reused whenever the service is requested. Later, when you write a different service class that talks to a database, you'll use a different approach \(called **scoped**\) instead. I'll explain why in the _Use a database_ chapter.
+`AddSingleton` añade el servicio requerido previamente al contenedor de servicios como **singleton**. Esto significa que solo se creara una copia para toda la aplicación del servicio`FakeTodoItemService`, y que esta sera re-utilizada cuando el servicio sea requerido. Más adelante, cuando hayamos creado otra clase de servicio que interactue con la base de datos, verás como se hará uso de un planteamiento diferente \(denominado **scoped**\). Esta parte se explica con mas detalle dentro del capitulo _Uso de una base de datos_.
 
-That's it! When a request comes in and is routed to the `TodoController`, ASP.NET Core will look at the available services and automatically supply the `FakeTodoItemService` when the controller asks for an `ITodoItemService`. Because the services are "injected" from the service container, this pattern is called **dependency injection**.
+Y esto es todo por el momento! Cuando una petición llega a la aplicación y es enviada al controlador`TodoController`, ASP.NET Core buscara entre todos los servicios disponibles y automáticamente suministrara el serivcio`FakeTodoItemService` cuando el controlador pregunte por la interfaz`ITodoItemService`. Debido a que los servicios son "inyectados" desde el contenedor de servicios, esta patrón de funcionamiento es denominado **inyección de dependencia**.
 

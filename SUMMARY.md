@@ -12,7 +12,7 @@
   * [Añade un Servicio](mvc-basics/add-a-service-class.md)
   * [Utiliza la Inyección de Código](mvc-basics/use-dependency-injection.md)
   * [Completa el Controlador](mvc-basics/finish-the-controller.md)
-* [Add external packages](add-external-packages.md)
+* [Añadir paquetes externos](add-external-packages.md)
 * [Use a database](use-a-database/README.md)
   * [Connect to a database](use-a-database/connect-to-a-database.md)
   * [Update the context](use-a-database/update-the-context.md)

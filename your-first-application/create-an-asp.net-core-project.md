@@ -16,7 +16,7 @@ cd AspNetCoreTodo
 
 Este comando crea un nuevo proyecto utilizando la plantilla `mvc`,  y añade alguna características extras para la autenticación y la seguridad al proyecto. \(Esta parte la cubriré en el apartado de _Seguridad e Identidad_\)
 
-Deberías comprobar como se han creado una series de nuevos ficheros en el directorio `AspNetCoreTodo `. Una vez que estas dentro el directorio con el comando`cd`, todo lo que tienes que hacer para ejecutar el proyecto es escribir el siguiente comando en tu terminal:
+Deberías comprobar como se han creado una series de nuevos ficheros en el directorio `AspNetCoreTodo` . Una vez que estas dentro el directorio con el comando`cd`, todo lo que tienes que hacer para ejecutar el proyecto es escribir el siguiente comando en tu terminal:
 
 ```text
 dotnet run
@@ -34,7 +34,7 @@ Abre tu navegador web favorito e introduce esta direccion`http://localhost:5000`
 La plantilla`dotnet new mvc` crea una gran variedad de ficheros y directorios por ti. A continuación se detallan los mas importantes que se generan sin ninguna tipo de configuración:
 
 * Los ficheros **Program.cs** y **Startup.cs** configuran e inicializan el servidor web y el pipeline de ASP.NET Core. La clase `Startup` es donde podrás añadir el middleware encargado de manejar y modificar todas las peticiones entrantes, ademas es la encargada de servir cosas como el contenido estático o paginas de errores cuando las peticiones no son correctas. También es donde podrás añadir tus propios servicios al contenedor de inyección de código \(hablaremos mas adelante sobre ello\).
-* Los directorios de **Models**, **Views **y **Controllers** contienen todos los componentes de la arquitectura Modelo-Vista-Controlador \(MVC\). En el próximo capitulo podrás explorar mas acerca de este aspecto.
+* Los directorios de **Models**, **Views** y **Controllers** contienen todos los componentes de la arquitectura Modelo-Vista-Controlador \(MVC\). En el próximo capitulo podrás explorar mas acerca de este aspecto.
 * El directorio **wwwroot** contiene todo el código estático de la aplicación como puede ser CSS, JavaScript, e imágenes. Los ficheros que se encuentren dentro del directorio `wwwroot` serán servidos como contenido estático y por tanto podrán ser incluidos y minimizados automáticamente.
 * El fichero **appsettings.json** contiene todos los ajustes de configuración que ASP.NET Core cargara en el arranque. Puedes utilizar este fichero para almacenar todos los strings necesarios para la conexión con la bases de datos u otro tipo de cosas que no quieras escribir directamente en el código fuente.
 

@@ -1,34 +1,34 @@
-# Add external packages
+# Añadir paquetes externos
 
-One of the big advantages of using a mature ecosystem like .NET is that the number of third-party packages and plugins is huge. Just like other package systems, you can download and install .NET packages that help with almost any task or problem you can imagine.
+Una de las ventajas de utilizar un ecosistema madura como .NET es que la gran cantidad de paquetes de terceros y plugins es enorme. Al igual que otros administradores de paquetes, puedes descargar e instalar paquetes .NET que te ayudaran con prácticamente cualquier tarea o problema que puedas imaginar.
 
-NuGet is both the package manager tool and the official package repository \(at [https://www.nuget.org](https://www.nuget.org)\). You can search for NuGet packages on the web, and install them from your local machine through the terminal \(or the GUI, if you're using Visual Studio\).
+NuGet es a su vez el administrador de paquetes y el repositorio oficial de paquetes \([https://www.nuget.org](https://www.nuget.org)\). Puedes buscar paquetes NuGet en internet y posteriormente instalarlos en tu propio equipo a través del terminal \(o mediante la GUI, si utilizas Visual Studio\).
 
-## Install the Humanizer package
+## Instalar el paquete Humanizer
 
-At the end of the last chapter, the to-do application displayed to-do items like this:
+Al final del ultimo capitulo, la aplicación to-do mostrara los items tal que así;
 
-![Dates in ISO 8601 format](.gitbook/assets/iso8601%20%281%29.png)
+![Fechas en formato ISO 8601](.gitbook/assets/iso8601%20%281%29.png)
 
-The due date column is displaying dates in a format that's good for machines \(called ISO 8601\), but clunky for humans. Wouldn't it be nicer if it simply read "X days from now"?
+La columna de la fecha muestra las fechas en formato que es entendible para las maquinas \(denominado ISO 8601\), pero difícil para los humanos. No seria mucho mejor si fueramos capaces de simplemente leer  "X días desde hoy"?
 
-You could write code yourself that converted an ISO 8601 date into a human-friendly string, but fortunately, there's a faster way.
+Podrías escribir tu mismo el código que convierta el formato ISO 8601 en una cadena de texto entendible por el humano, pero afortunadamente existe una solución mas rapida..
 
-The Humanizer package on NuGet solves this problem by providing methods that can "humanize" or rewrite almost anything: dates, times, durations, numbers, and so on. It's a fantastic and useful open-source project that's published under the permissive MIT license.
+El paquete Humanizer de NuGet soluciona este problema facilitándonos métodos que son capaces de "humanizar" o re-escribir prácticamente cualquier cosa: fechas, horas, duraciones, números y un largo etc. Es un proyecto de código abierto realmente fantástico y util que esta publicado bajo la permisiva licencia MIT.
 
-To add it to your project, run this command in the terminal:
+Para añadirlo a tu proyecto, ejecuta este comando en el terminal:
 
 ```text
 dotnet add package Humanizer
 ```
 
-If you peek at the `AspNetCoreTodo.csproj` project file, you'll see a new `PackageReference` line that references `Humanizer`.
+Si investigas un poco dentro del fichero del proyecto`AspNetCoreTodo.csproj`, podrás ver una nueva linea `PackageReference` que hace referencia al paquete `Humanizer`.
 
-## Use Humanizer in the view
+## Utilizar Humanizer en la vista
 
-To use a package in your code, you usually need to add a `using` statement that imports the package at the top of the file.
+Para hacer uso del paquete en tu código, normalmente necesitas añadir la declaración `using` que importa el paquete en la parte superior del fichero.
 
-Since Humanizer will be used to rewrite dates rendered in the view, you can use it directly in the view itself. First, add a `@using` statement at the top of the view:
+Dado que el paquete Humanizer sera utilizado para re-escribir las fechas mostradas en la vista, necesitaras hacer uso del mismo en la propia vista. Primero, añade la declaración `@using` en la parte superior de la vista:
 
 `Views/Todo/Index.cshtml`
 
@@ -39,19 +39,19 @@ Since Humanizer will be used to rewrite dates rendered in the view, you can use 
 // ...
 ```
 
-Then, update the line that writes the `DueAt` property to use Humanizer's `Humanize` method:
+A continuación, actualiza la linea encargada de escribir la propiedad `DueAt` para hacer uso del método `Humanize`:
 
 ```markup
 <td>@item.DueAt.Humanize()</td>
 ```
 
-Now the dates are much more readable:
+Ahora las fechas ya son mucho mas legibles:
 
 ![Human-readable dates](.gitbook/assets/friendly-dates%20%281%29.png)
 
-There are packages available on NuGet for everything from parsing XML to machine learning to posting to Twitter. ASP.NET Core itself, under the hood, is nothing more than a collection of NuGet packages that are added to your project.
+Existen una gran variedad de paquetes disponibles en NuGet para prácticamente todo, desde parsear un fichero XML hasta utilizar el machine learning para postear en Twitter. ASP.NET Core en si mismo no es mas que una colección de paquetes NuGet que son añadidos a tu proyecto.
 
-> The project file created by `dotnet new mvc` includes a single reference to the `Microsoft.AspNetCore.All` package, which is a convenient "metapackage" that references all of the other ASP.NET Core packages you need for a typical project. That way, you don't need to have hundreds of package references in your project file.
+> El proyecto creando con el comando `dotnet new mvc` incluye una referencia al paquete`Microsoft.AspNetCore.All`, el cual es precisamente un "metapaquete" que hace referencia a todos los otros paquetes que ASP.NET necesita para el proyecto. De esta forma, tu no tienes que tener cientos de referencias a paquetes en tu fichero de proyecto.
 
-In the next chapter, you'll use another set of NuGet packages \(a system called Entity Framework Core\) to write code that interacts with a database.
+En el proximo capitulo, utilizaras otro conjunto de paquetes NuGet \(un sistema denominado Entity Framework Core\) para escribir el código que se comunicará con la base de datos.
 

@@ -12,7 +12,7 @@ Nuevamente, es posible realizar todos estos puntos en un solo u enorme controlad
 
 Separar tus aplicación según este patron suele ser denominado **multi-tier** o **arquitectura n-tier**. En algunos casos, las capas \(tiers\) están completamente aisladas unas de otras en proyectos distintos, sim embargo otras veces simplemente se refiere a como están utilizadas y organizadas las clases de la aplicación. El punto clave aquí es pensar como podemos dividir nuestra aplicación en pequeñas piezas manejables de forma individual, y de esta forma evitamos tener controladores o clases gigantescos que intentan de ocuparse todo.
 
-Para este proyecto, vamos a utilizar 2 capas a nivel de aplicación: una **capa de presentación **formada por las vistas y los controladores que interactúan con el usuario y una **capa de servicio** que contendrá la lógica del negocio y el código encargado del acceso a la base de datos. En realidad la capa de presentación ya existe, por lo que el siguiente paso consistirá en crear un servicio que se encargue de la lógica del negocio del la aplicación To-Do y de salvar los items de tipo To-Do en la base de datos.
+Para este proyecto, vamos a utilizar 2 capas a nivel de aplicación: una **capa de presentación** formada por las vistas y los controladores que interactúan con el usuario y una **capa de servicio** que contendrá la lógica del negocio y el código encargado del acceso a la base de datos. En realidad la capa de presentación ya existe, por lo que el siguiente paso consistirá en crear un servicio que se encargue de la lógica del negocio del la aplicación To-Do y de salvar los items de tipo To-Do en la base de datos.
 
 > Proyectos de mayor tamaño suelen utilizar una arquitectura de tipo 3-tier: una capa de presentación, una capa de servicio y una capa de datos. Una **capa datos** es una clase que se centra exclusivamente en el acceso a la base de datos \(y no en la lógica de negocio\). En nuestra aplicación, vamos a combinar estas 2 ultimas capas en un única y sencilla capa de servicio, pero siéntete completamente libre de experimentar con diferentes tipos de arquitecturas para organizar este código.
 
@@ -39,7 +39,7 @@ namespace AspNetCoreTodo.Services
 }
 ```
 
-Es importante destacar que el `namespace `de este fichero es` AspNetCoreTodo.Services`. Los Namespaces son una forma de organizar nuestros ficheros .NET, y es una buena practica que el `namespace` coincida con el nombre del directorio donde esta alojado el fichero \(`AspNetCoreTodo.Services` para ficheros en la directorio `Services` \).
+Es importante destacar que el `namespace` de este fichero es `AspNetCoreTodo.Services`. Los Namespaces son una forma de organizar nuestros ficheros .NET, y es una buena practica que el `namespace` coincida con el nombre del directorio donde esta alojado el fichero \(`AspNetCoreTodo.Services` para ficheros en la directorio `Services` \).
 
 Dado que este fichero \(perteneciente al namespace `AspNetCoreTodo.Services`\) hace referencia a la clase `TodoItem`\(perteneciente al namespace `AspNetCoreTodo.Models`\), es necesario incluir la declaración `using` en la parte superior del fichero para incluir este namespace. Sin la inclusion de esta declaración `using`, tendremos un error en nuestro código del siguiente tipo:
 
